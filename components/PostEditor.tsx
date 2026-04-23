@@ -13,6 +13,7 @@ type Post = {
   content: string
   status: string
   summary?: string
+  cover_image?: string | null
 }
 
 export default function PostEditor({ post }: { post?: Post }) {
@@ -208,7 +209,7 @@ export default function PostEditor({ post }: { post?: Post }) {
             id="cover_image"
             name="cover_image"
             type="url"
-            defaultValue={post?.cover_image}
+            defaultValue={post?.cover_image || undefined}
             placeholder="https://example.com/image.jpg"
             className="rounded-2xl border-2 p-4 outline-none focus:ring-4 focus:ring-blue-500/15 focus:border-blue-500 transition-all text-sm"
             style={{

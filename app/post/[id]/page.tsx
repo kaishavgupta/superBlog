@@ -101,7 +101,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
             AI Summary
           </div>
           <div className="relative z-10 text-base font-medium space-y-3" style={{ color: 'var(--text-primary)' }}>
-            {post.summary.split('\n').map((line, idx) => {
+            {post.summary.split('\n').map((line: string, idx: number) => {
               const trimmed = line.trim()
               if (!trimmed) return null
               return <p key={idx} className="leading-relaxed">{trimmed}</p>
